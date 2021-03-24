@@ -15,7 +15,7 @@ f = sym.lambdify(a, equation)   #lambda representation of equation
 f_prime = sym.lambdify(a, sym.diff(equation))   #lambda representation of derivative of equation
 
 # interval definition
-interval = [499, 501]
+interval = [500, 502]
 
 print()
 print("MA375 - Project #1")
