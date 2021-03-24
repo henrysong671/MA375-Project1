@@ -8,11 +8,13 @@ import matplotlib.pyplot as plt
 import matplotlib
 import time
 
-a = sym.symbols('a')
-equation = 500*sym.tan(a)-(32.2/(2*(1500**2)*(sym.cos(a)**2)))*500**2-50
-f = sym.lambdify(a, equation)
-f_prime = sym.lambdify(a, sym.diff(equation))
+# Function definitions
+a = sym.symbols('a')    # define a as a variable (needed for lambda function)
+equation = 500*sym.tan(a)-(32.2/(2*(1500**2)*(sym.cos(a)**2)))*500**2-50    # equation that will be used for root-finding methods
+f = sym.lambdify(a, equation)   #lambda representation of equation
+f_prime = sym.lambdify(a, sym.diff(equation))   #lambda representation of derivative of equation
 
+# interval definition
 interval = [499, 501]
 
 print()
@@ -23,34 +25,39 @@ print("f(a) = ", equation)
 print("Interval = ", interval)
 print()
 
-start_time1 = time.time()
-print("Bisection Method over interval", interval ,"\t:\t", bisection(f, interval))
-execution_time1 = time.time()-start_time1
+#   1. Bisection Method
+start_time1 = time.time()   # start time
+print("Bisection Method over interval", interval ,"\t:\t", bisection(f, interval))  # runs bisection method
+execution_time1 = time.time()-start_time1   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time1))
 
 print()
 
-start_time2 = time.time()
-print("Newton's Method over interval", interval ,"\t:\t", newton(f, f_prime, 501))
-execution_time2 = time.time()-start_time2
+#   2. Newton's Method
+start_time2 = time.time()   # start time
+print("Newton's Method over interval", interval ,"\t:\t", newton(f, f_prime, 501))  # runs Newton's Method
+execution_time2 = time.time()-start_time2   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time2))
 
 print()
 
-start_time3 = time.time()
-print("Secant Method over interval", interval ,"\t\t:\t", secant(f, interval))
-execution_time3 = time.time()-start_time3
+#   3. Secant Method
+start_time3 = time.time()   # start time
+print("Secant Method over interval", interval ,"\t\t:\t", secant(f, interval))  # runs secant method
+execution_time3 = time.time()-start_time3   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time3))
 
 print()
 
-start_time4 = time.time()
-print("Falsi Method over interval", interval ,"\t\t:\t", falsi(f, interval))
-execution_time4 = time.time()-start_time4
+#   4. Falsi Method
+start_time4 = time.time()   # start time
+print("Falsi Method over interval", interval ,"\t\t:\t", falsi(f, interval))    # runs falsi method
+execution_time4 = time.time()-start_time4   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time4))
 
 print()
 
+# sorts and prints methods from fastest execution time to slowest
 print("Fastest to slowest methods:")
 sorted_times = sorted([execution_time1, execution_time2, execution_time3, execution_time4])
 counter = 1
