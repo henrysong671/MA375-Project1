@@ -13,7 +13,7 @@ equation = 500*sym.tan(a)-(32.2/(2*(1500**2)*(sym.cos(a)**2)))*500**2-50
 f = sym.lambdify(a, equation)
 f_prime = sym.lambdify(a, sym.diff(equation))
 
-interval = [499, 500]
+interval = [499, 501]
 
 print()
 print("MA375 - Project #1")
@@ -27,7 +27,7 @@ print("Execution time in seconds: ", "{:.8f}".format(time.time()-start_time1))
 print()
 
 start_time2 = time.time()
-print("Newton's Method over interval", interval ,"\t:\t", newton(f, f_prime, 499))
+print("Newton's Method over interval", interval ,"\t:\t", newton(f, f_prime, 500))
 print("Execution time in seconds: ", "{:.8f}".format(time.time()-start_time2))
 
 print()
