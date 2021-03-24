@@ -13,7 +13,7 @@ equation = 500*sym.tan(a)-(32.2/(2*(1500**2)*(sym.cos(a)**2)))*500**2-50
 f = sym.lambdify(a, equation)
 f_prime = sym.lambdify(a, sym.diff(equation))
 
-interval = [499, 502]
+interval = [499, 501]
 
 print()
 print("MA375 - Project #1")
