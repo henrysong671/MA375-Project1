@@ -10,12 +10,12 @@ import time
 
 # function definitions
 r = sym.symbols('r')    # define r as a variable (needed for lambda function)
-equation = 80-20*sym.log(r, 10)-0.00115*r-10    # equation that will be used for root-finding methods
+equation = 80-20*sym.log(r, 10)-0.00115*r-20    # equation that will be used for root-finding methods
 f = sym.lambdify(r, equation)   #lambda representation of equation
 f_prime = sym.lambdify(r, sym.diff(equation))   #lambda representation of derivative of equation
 
 # interval definition
-interval = [79, 81]
+interval = [888, 889]
 
 print()
 print("MA375 - Project #1")
@@ -35,7 +35,7 @@ print()
 
 #   2. Newton's Method
 start_time2 = time.time()   # start time
-print("Newton's Method over interval", interval ,"\t:\t", newton(f, f_prime, 501))  # runs Newton's Method
+print("Newton's Method over interval", interval ,"\t:\t", newton(f, f_prime, 888))  # runs Newton's Method
 execution_time2 = time.time()-start_time2   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time2))
 
