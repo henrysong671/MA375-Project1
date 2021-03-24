@@ -15,7 +15,7 @@ f = sym.lambdify(a, equation)   #lambda representation of equation
 f_prime = sym.lambdify(a, sym.diff(equation))   #lambda representation of derivative of equation
 
 # interval definition
-interval = [500, 502]
+interval = [5.5, 6.5]
 
 print()
 print("MA375 - Project #1")
@@ -25,6 +25,7 @@ print("f(a) = ", equation)
 print("Interval = ", interval)
 print()
 
+print("**Note: Interval and values are provided and given in Radians")
 #   1. Bisection Method
 start_time1 = time.time()   # start time
 print("Bisection Method over interval", interval ,"\t:\t", bisection(f, interval))  # runs bisection method
@@ -35,7 +36,7 @@ print()
 
 #   2. Newton's Method
 start_time2 = time.time()   # start time
-print("Newton's Method over interval", interval ,"\t:\t", newton(f, f_prime, 501))  # runs Newton's Method
+print("Newton's Method over interval", interval ,"\t:\t", newton(f, f_prime, 5.5))  # runs Newton's Method
 execution_time2 = time.time()-start_time2   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time2))
 
