@@ -33,7 +33,8 @@ print()
 
 #   1. Bisection Method
 start_time1 = time.time()   # start time
-print("Bisection Method over interval", interval ,"\t:\t", bisection(f, interval))  # runs bisection method
+bisection_result = bisection(f, interval)   # runs bisection method
+print("Bisection Method over interval", interval ,"\t:\t", bisection_result[0], "in", bisection_result[1], "iterations.")  
 execution_time1 = time.time()-start_time1   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time1))
 
@@ -41,7 +42,8 @@ print()
 
 #   2. Newton's Method
 start_time2 = time.time()   # start time
-print("Newton's Method over interval", interval ,"\t:\t", newton(f, f_prime, 888))  # runs Newton's Method
+newton_result = newton(f, f_prime, interval)     # runs Newton's Method
+print("Newton's Method over interval", interval ,"\t:\t", newton_result[0], "in", newton_result[1], "iterations.")  
 execution_time2 = time.time()-start_time2   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time2))
 
@@ -49,7 +51,8 @@ print()
 
 #   3. Secant Method
 start_time3 = time.time()   # start time
-print("Secant Method over interval", interval ,"\t\t:\t", secant(f, interval))  # runs secant method
+secant_result = secant(f, interval)     # runs secant method
+print("Secant Method over interval", interval ,"\t\t:\t", secant_result[0], "in", secant_result[1], "iterations.")  
 execution_time3 = time.time()-start_time3   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time3))
 
@@ -57,7 +60,8 @@ print()
 
 #   4. Falsi Method
 start_time4 = time.time()   # start time
-print("Falsi Method over interval", interval ,"\t\t:\t", falsi(f, interval))    # runs falsi method
+falsi_result = falsi(f, interval)   # runs falsi method
+print("Falsi Method over interval", interval ,"\t\t:\t", falsi_result[0], "in", falsi_result[1], "iterations.")    
 execution_time4 = time.time()-start_time4   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time4))
 
