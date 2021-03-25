@@ -16,8 +16,8 @@ def newton(f, f_prime, interval):
     # default error tolerance is set to 0.000001
     E = 0.000001
 
-    x0 = random.uniform(float(interval[0]), float(interval[1]))
-
+    x0 = interval[0]#random.uniform(float(interval[0]), float(interval[1]))
+    original_x0 = x0
 
     r = x0 - f(x0)/f_prime(x0)
 
@@ -25,13 +25,13 @@ def newton(f, f_prime, interval):
         # checks if root falls into error tolerance
         if abs(r) >= E and abs(x0 >= E): 
             # checks if |f(x0)| < E
-            if abs(f(x0)) < E: return x0, i
+            if abs(f(x0)) < E: return x0, i, original_x0
 
             xn = x0
             x0 = x0 - f(x0)/f_prime(x0)
 
             # checks if |xn-x| < E
-            if abs(xn - x0) < E: return x0, i
+            if abs(xn - x0) < E: return x0, i, original_x0
         else:
             break
-    return r, i
+    return r, i, original_x0
