@@ -44,7 +44,7 @@ print()
 #   2. Newton's Method
 start_time2 = time.time()   # start time
 newton_result = newton(f, f_prime, interval)     # runs Newton's Method
-print("Newton's Method over interval", interval ,"\t:\t", newton_result[0], "in", newton_result[1], "iterations.")  
+print("Newton's Method over interval", interval ,"\t:\t", newton_result[0], "in", newton_result[1], "iterations using estimate: ", newton_result[2], ".")  
 execution_time2 = time.time()-start_time2   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time2))
 
