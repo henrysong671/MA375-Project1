@@ -16,6 +16,9 @@ def secant(f, interval):
     #default iteration is set to 1000
     n = 1000
 
+    #default error tolerance
+    E = 0.000001
+
     #checks if a root exists by checking f(a)*f(b) (MUST be negative)
     if f(a)*f(b) >= 0: return None
 
@@ -23,12 +26,14 @@ def secant(f, interval):
         # estimate for root
         xn = a - f(a)*(b - a)/(f(b) - f(a))
         
-        if f(xn) == 0: return xn    #found exact root
-        #shifts variables 
-        elif f(a)*f(xn) > 0: a = xn
-        elif f(a)*f(xn) < 0: b = xn
-        else: return None   #does not converge
-
+        if abs(xn) >= E:
+            if f(xn) == 0: return xn, i    #found exact root
+            #shifts variables 
+            elif f(a)*f(xn) > 0: a = xn
+            elif f(a)*f(xn) < 0: b = xn
+            else: return None   #does not converge
+        else:
+            break
         # print statement used for testing
         # print("[", a, ", ", b , "]")
-    return a - f(a)*(b - a)/(f(b) - f(a))
+    return a - f(a)*(b - a)/(f(b) - f(a)), i
