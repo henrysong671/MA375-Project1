@@ -1,3 +1,9 @@
+# Henry Song  |  MA375  |  Spring 2021
+# Project #1: Root-Finding Methods
+# File: Case1_Driver.py
+# Description: Runs the driver code (containing all 4 methods) for Case #1
+#==========================================================================
+
 from Bisection import bisection
 from Newton import newton
 from Secant import secant

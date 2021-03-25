@@ -1,5 +1,5 @@
 # Henry Song  |  MA375  |  Spring 2021
-# Homework #4: Root-Finding Methods
+# Project #1: Root-Finding Methods
 # File: Falsi.py
 # Description: Method for Regular Falsi method. Default iteration is set to 1000.
 #   - Inputs:(f, interval)
