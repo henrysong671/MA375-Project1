@@ -4,7 +4,7 @@
 # Description: Method for Newton's method. Default iteration is set to 1000.
 #   - Inputs:(f, interval, x0)
 #   --- f: lambda representation of function
-#   === f_prime: lambda representation of derivitive of function
+#   --- f_prime: lambda representation of derivitive of function
 #   --- interval: array contanining search interval (i.e. [-2, 0])
 #   - Output: approximation of root or None if DNE
 #==========================================================================
