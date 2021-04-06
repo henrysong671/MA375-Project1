@@ -16,9 +16,11 @@ import time
 
 # Function definitions
 a = sym.symbols('a')    # define a as a variable (needed for lambda function)
-equation = 500*sym.tan(a)-(32.2/(2*(1500**2)*(sym.cos(a)**2)))*500**2-50    # equation that will be used for root-finding methods
+equation = 500*sym.tan(a)-(32.2/(2*(1500**2)*((sym.cos(a))**2)))*500**2-50    # equation that will be used for root-finding methods
 f = sym.lambdify(a, equation)   #lambda representation of equation
+diff_start_time = time.time()
 f_prime = sym.lambdify(a, sym.diff(equation))   #lambda representation of derivative of equation
+diff_time = time.time() - diff_start_time
 
 # interval definition
 interval = [5.5, 6.5]
@@ -47,6 +49,7 @@ newton_result = newton(f, f_prime, interval)     # runs Newton's Method
 print("Newton's Method over interval", interval ,"\t:\t", newton_result[0], "in", newton_result[1], "iterations using estimate: ", newton_result[2], ".")  
 execution_time2 = time.time()-start_time2   # calculates time to execute method
 print("Execution time in seconds: ", "{:.8f}".format(execution_time2))
+print("Execution time including differentiation: ", "{:.8f}".format(execution_time2+diff_time))
 
 print()
 
