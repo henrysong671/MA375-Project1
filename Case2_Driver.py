@@ -71,15 +71,22 @@ print("Execution time in seconds: ", "{:.8f}".format(execution_time4))
 print()
 
 # sorts and prints methods from fastest execution time to slowest
-print("Fastest to slowest methods:")
+print("Fastest to slowest times\t\t\tFastest to slowest iterations")
 sorted_times = sorted([execution_time1, execution_time2, execution_time3, execution_time4])
+sorted_iterations = sorted([bisection_result[1], newton_result[1], secant_result[1], falsi_result[1]])
 counter = 1
-for i in sorted_times:
+for i in range(len(sorted_times)):
     print(counter, ":", end=" ")
-    if i == execution_time1: print("Bisection Method")
-    elif i == execution_time2: print("Newton's Method")
-    elif i == execution_time3: print("Secant Method")
-    elif i == execution_time4: print("Falsi Method")
+    if sorted_times[i] == execution_time1: print("Bisection Method", end="\t\t\t\t")
+    elif sorted_times[i] == execution_time2: print("Newton's Method", end="\t\t\t\t")
+    elif sorted_times[i] == execution_time3: print("Secant Method", end="\t\t\t\t")
+    elif sorted_times[i] == execution_time4: print("Falsi Method", end="\t\t\t\t")
+
+    print(counter, ":", end=" ")
+    if sorted_iterations[i] == bisection_result[1]: print("Bisection Method")
+    elif sorted_iterations[i] == newton_result[1]: print("Newton's Method")
+    elif sorted_iterations[i] == secant_result[1]: print("Secant Method")
+    elif sorted_iterations[i] == falsi_result[1]: print("Falsi Method")
     counter += 1
 
 print()
