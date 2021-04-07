@@ -26,7 +26,7 @@ def falsi(f, interval):
         # Find the point that touches x axis 
         x2 = b - f(b)*((b-a)/(f(b)-f(a)))
 
-        if abs(x2) >= E:
+        if abs(f(x2)) > E:
             # checks if root is found
             if f(x2) == 0: return x2, i
             # shifts variables

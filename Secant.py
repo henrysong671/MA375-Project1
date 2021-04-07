@@ -26,7 +26,7 @@ def secant(f, interval):
         # estimate for root
         xn = a - f(a)*(b - a)/(f(b) - f(a))
         
-        if abs(xn) >= E:
+        if abs(f(xn)) > E:
             if f(xn) == 0: return xn, i    #found exact root
             #shifts variables 
             elif f(a)*f(xn) > 0: a = xn

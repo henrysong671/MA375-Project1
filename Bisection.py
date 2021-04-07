@@ -27,7 +27,7 @@ def bisection(f, interval):
         m = (a + b)/2
 
         # checks if within error tolerance
-        if abs(m) >= E:
+        if abs(f(m)) > E:
             #checks if root is the midpoint
             if f(m) == 0: return m, i
             #checks if different signs
