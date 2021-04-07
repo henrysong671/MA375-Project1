@@ -23,7 +23,7 @@ def newton(f, f_prime, interval):
 
     for i in range(n):
         # checks if root falls into error tolerance
-        if abs(r) >= E and abs(x0) >= E: 
+        if abs(r) >= E and abs(f(x0)) >= E: 
             # checks if |f(x0)| < E
             if abs(f(x0)) < E: return x0, i, original_x0
 
