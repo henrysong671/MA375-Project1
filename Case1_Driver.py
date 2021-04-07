@@ -23,7 +23,7 @@ f_prime = sym.lambdify(a, sym.diff(equation))   #lambda representation of deriva
 diff_time = time.time() - diff_start_time
 
 # interval definition
-interval = [5.5, 6.5]
+interval = [0, 1]
 
 print()
 print("MA375 - Project #1")
@@ -72,8 +72,9 @@ print("Execution time in seconds: ", "{:.8f}".format(execution_time4))
 print()
 
 # sorts and prints methods from fastest execution time to slowest
-print("Fastest to slowest methods:")
+print("Fastest to slowest times\t\t\tFastest to slowest iterations")
 sorted_times = sorted([execution_time1, execution_time2, execution_time3, execution_time4])
+sorted_iterations = sorted([bisection_result[1], newton_result[1], secant_result[1], falsi_result[1])
 counter = 1
 for i in sorted_times:
     print(counter, ":", end=" ")
